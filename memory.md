@@ -106,7 +106,7 @@ Explicitly out of scope: accounts, multi-user support, sharing, network communic
 - An isolated `USERPROFILE` smoke run exercised add/list/use/remove/expiring/shop/set-minimum/clear-minimum, including the day-seven boundary; the temporary directory was removed and the real pantry was not accessed.
 - Permission tests passed on the Windows host: they assert the POSIX chmod requests and confirm pantry storage remains under the supplied home path for inherited Windows ACLs. Actual POSIX `stat` mode assertions run on POSIX hosts.
 - Pylance/editor can report unresolved Node built-ins (`node:crypto`, `node:os`, `node:url`, `process`) because Node type declarations are intentionally not installed. Runtime tests and Node type stripping work; do not add an unapproved dependency just to silence those diagnostics.
-- Workspace root listing showed no `.git` directory; `git rev-parse --git-dir` failed, so this workspace is not currently a Git repository. No `.gitignore` was generated.
+- **Git (2026-10-13)**: the workspace was converted into a Git repository (`git init -b main`). A `.gitignore` was added (`node_modules/`, `*.log`, `.env`, `.DS_Store`, `coverage/`). Initial commit `c1ca376` ("feat: initial Pantry Pal CLI from Spec Kit workshop") contains all source, tests, specs, `.specify/`, `.github/skills/`, README and this file. Remote `origin` is the public repo https://github.com/murilocaio75/Genai-M15-pantry-pal (created with `gh`, branch `main` pushed).
 - `.specify/extensions.yml` was absent; no Spec Kit hooks were configured.
 
 ## Future Continuation
